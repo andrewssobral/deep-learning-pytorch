@@ -1,6 +1,6 @@
 ## PyTorch Deep Learning Models
 
-Last page update: **24/09/2028**
+Last page update: **24/09/2018**
 
 This repository aims to summarize and standardize some deep neural networks implemented in PyTorch for image classification, detection and segmentation. Other applications like background subtraction, object tracking are also welcome.
 
@@ -61,7 +61,7 @@ Many thanks for the authors for this great initiative!
 
 **License** 
 
-Source codes, algorithms implementation, and everything provided in this repository is considered **free** for personal, academic and commercial purposes.
+Source codes, algorithms implementation, and everything provided in this repository is considered **free** for personal, academic, and commercial purposes.
 
 **About the author**
 
