@@ -14,7 +14,7 @@ def is_image(filename):
     return any(filename.endswith(ext) for ext in EXTENSIONS)
 
 def get_image_path(root, basename, extension):
-    return os.path.join(root, f'{basename}{extension}')
+    return os.path.join(root, '{basename}{extension}'.format(**locals()))
 
 def image_basename(filename):
     return os.path.basename(os.path.splitext(filename)[0])

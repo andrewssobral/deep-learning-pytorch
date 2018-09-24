@@ -11,9 +11,9 @@ from utils.dataset import VOCBSTrain
 from utils.criterion import BinaryCrossEntropyLoss2d
 
 def save_model(model_name, epoch, step):
-    filename = f'{model_name}-{epoch:03}-{step:04}.pth'
+    filename = '{model_name}-{epoch:03}-{step:04}.pth'.format(**locals())
     torch.save(model.state_dict(), filename)
-    print(f'save: {filename} (epoch: {epoch}, step: {step})')
+    print('save: {filename} (epoch: {epoch}, step: {step})'.format(**locals()))
 
 NUM_CLASSES = 1                 # For binary segmentation NUM_CLASSES shoud be equals to '1'.
 IMG_SIZE    = (256,256)         # All images will be resized to 256x256 pixels.
@@ -82,14 +82,14 @@ for epoch in range(1, NUM_EPOCHS+1):
         average = sum(epoch_loss) / len(epoch_loss)
 
         if STEPS_LOSS > 0 and step % STEPS_LOSS == 0:
-            print(f'loss: {average} (epoch: {epoch}, step: {step})')
+            print('loss: {average} (epoch: {epoch}, step: {step})'.format(**locals()))
 
         if STEPS_SAVE > 0 and step % STEPS_SAVE == 0:
             save_model(MODEL_NAME, epoch, step)
 
         iteration = iteration + 1
-        break
-    break
+        #break
+    #break
 
 save_model(MODEL_NAME, epoch, step)
 print('Finished!')
