@@ -7,7 +7,7 @@ from torch.utils.data import DataLoader
 from torchvision.transforms import Compose
 from torchvision.transforms import ToTensor, Resize
 
-from utils.dataset import VOCBS
+from utils.dataset import VOCBSTrain
 from utils.criterion import BinaryCrossEntropyLoss2d
 
 def save_model(model_name, epoch, step):
@@ -42,7 +42,7 @@ if cuda_enabled:
 model.train()
 
 loader = DataLoader(
-    VOCBS(DATASET_PATH, input_transform, target_transform), 
+    VOCBSTrain(DATASET_PATH, input_transform, target_transform), 
     num_workers=NUM_WORKERS, batch_size=BATCH_SIZE, shuffle=True
 )
 
